@@ -1,0 +1,25 @@
+{
+  "name": "sequelize-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "restore": "npx sequelize db:migrate && node ./database/setRelation.js",
+    "clearUp": "node ./database/dropTable.js && npx sequelize db:migrate:undo:all",
+    "rebuild": "npm run clearUp && npm run restore",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.0.2",
+    "fastify-jwt": "^2.1.2",
+    "mariadb": "^2.4.1",
+    "sequelize": "^6.3.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}
